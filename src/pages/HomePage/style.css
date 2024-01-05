@@ -1,0 +1,125 @@
+.wrapper {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  margin: 20px
+}
+
+.wrapper header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 600;
+
+}
+
+header .icons span {
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  line-height: 28px;
+  margin: 0 1px;
+  text-align: center;
+  cursor: pointer;
+  color: #878787;
+  font-size: 1.2rem;
+
+}
+
+header .icons span:last-child {
+
+  margin-right: -10px;
+
+}
+
+header .icons span:hover {
+  background: #fffdfd;
+
+}
+
+.calendar {
+  padding: 20px;
+
+}
+
+.calendar__weeks li {
+
+  font-weight: 600;
+
+}
+
+.calendar__days {
+
+  margin-bottom: 20px;
+
+}
+
+.calendar__days li {
+
+  cursor: pointer;
+  margin-top: 15px;
+  z-index: 1;
+
+}
+
+.calendar__days li.inactive {
+  color: #aaa
+}
+
+.calendar__days li.active {
+  color: #fff
+}
+
+.calendar__days li.active {}
+
+.calendar ul {
+
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar ul li {
+
+  width: calc(100% / 7);
+  position: relative;
+
+}
+
+.calendar__days li::before {
+
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+
+}
+
+.calendar__days li:hover::before {
+  background: #fffdfd;
+
+}
+
+.calendar__days li.active::before {
+
+  background: #6656b8;
+
+}

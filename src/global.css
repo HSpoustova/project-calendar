@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background: rgb(199, 189, 255);
+  background: -moz-radial-gradient(circle, rgba(236, 230, 206, 1) 1%, rgba(197, 177, 222, 1) 69%, rgba(140, 149, 233, 1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(236, 230, 206, 1) 1%, rgba(197, 177, 222, 1) 69%, rgba(140, 149, 233, 1) 100%);
+  background: radial-gradient(circle, rgba(236, 230, 206, 1) 1%, rgba(197, 177, 222, 1) 69%, rgba(140, 149, 233, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ece6ce", endColorstr="#8c95e9", GradientType=1);
+}
+
+.container {
+  width: 35rem;
+  margin-right: auto;
+  margin-left: auto;
+}
