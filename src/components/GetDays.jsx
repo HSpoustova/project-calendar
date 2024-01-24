@@ -1,29 +1,16 @@
 import '../pages/HomePage/style.css';
-
-export const GetMonth = ({ month, year }) => {
-  const months = [
-    'Leden',
-    'Únor',
-    'Březen',
-    'Duben',
-    'Květen',
-    'Červen',
-    'Červenec',
-    'Srpen',
-    'Září',
-    'Říjen',
-    'Listopad',
-    'Prosinec',
-  ];
-
-  return (
-    <p className="current-date">
-      {months[month]} {year}
-    </p>
-  );
-};
+import { useState } from 'react';
+import { Modal } from './Modal';
 
 export const GetDays = ({ month, year }) => {
+  const [onModal, setModal] = useState(false);
+  const [isTask, setTask] = useState({});
+
+  const handleClick = (year, month, day) => {
+    setModal(true);
+    setTask({ year, month, day });
+  };
+
   const lastDateofMonth = new Date(year, month + 1, 0).getDate();
 
   const firstDayofMonth =
@@ -56,11 +43,27 @@ export const GetDays = ({ month, year }) => {
     days.push({ class: 'inactive', day: i - lastDayofMonth + 1 });
   }
 
-  return days.map((day, index) => {
-    return (
-      <li className={day.class} key={index}>
-        {day.day}
-      </li>
-    );
-  });
+  return (
+    <>
+      {days.map((day, index) => {
+        return (
+          <li
+            className={day.class}
+            key={index}
+            onClick={() => handleClick(year, month, day.day)}
+          >
+            {day.day}
+          </li>
+        );
+      })}
+      {onModal ? (
+        <Modal
+          taskYear={isTask.year}
+          taskMonth={isTask.month}
+          taskDay={isTask.day}
+          setModal={setModal}
+        />
+      ) : null}
+    </>
+  );
 };

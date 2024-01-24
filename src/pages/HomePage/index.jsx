@@ -1,6 +1,6 @@
 import './style.css';
-import { GetMonth } from '../../components/Calendar.jsx';
-import { GetDays } from '../../components/Calendar.jsx';
+import { GetMonth } from '../../components/GetMonth.jsx';
+import { GetDays } from '../../components/GetDays.jsx';
 import { useState } from 'react';
 
 export const HomePage = () => {
