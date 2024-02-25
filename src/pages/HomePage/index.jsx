@@ -25,8 +25,6 @@ export const HomePage = () => {
     }
   };
 
-  console.log(currentMonth, currentYear);
-
   return (
     <div className="container">
       <div className="wrapper">

@@ -82,8 +82,6 @@ header .icons span:hover {
   color: #fff
 }
 
-.calendar__days li.active {}
-
 .calendar ul {
 
   display: flex;
